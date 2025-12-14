@@ -1,6 +1,10 @@
 # ViiVai Milano
 API and examples for Haptic Grid Displays
 
+🎥 **Demo Video**  
+[Click to watch the demo](images/HapticGenAI_demo.mp4)
+
+[![Demo Video](images/first_frame.png)](images/HapticGenAI_demo.mp4)
 
 ## What are Haptic Grid Displays
 Haptic Grid Displays are common in research and development settings, enabling the control of haptic content on the skin using multichannel haptic actuators arranged in spatial arrays. One advantage of grid displays is their ability to increase information transfer compared to a single actuator. Higher information throughput supports users to perform virtual tasks with greater efficiency. Another benefit of grid displays is the ability to provide structured spatial haptic feedback, correlating physical and media events to coherent haptic events, thus improving both immersion and causality with the virtual and/or augmented content.
