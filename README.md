@@ -12,7 +12,18 @@ Haptic Grid displays vary in sizes and forms, and have been used on fingertips, 
 
 ## Nomenclature
 
-Each channel of the multichannel haptic grid display is defined in [IEEE_](./my_file.md) 
+Each channel of the multichannel haptic grid display is defined in [IEEE_HapticHardware.py](IEEE/IEEE_HapticHardware.py). 
+
+1. def setHapticOutput(act, g, act_index): -> act\
+Map haptic output to the physical grid
+
+__act__: An np.array of dimension equal to the number of haptic channels in the grid\
+__g__: gain for each channel\
+__act_index__: indexing of each channel
+
+2. def setupHapticDictionary(device_type, border = SimpleNamespace(x, y, w, h))
+
+2. 
 
 🎥 **Demo Video**  
 [Click to watch the demo](images/HapticGenAI_demo.mp4)
