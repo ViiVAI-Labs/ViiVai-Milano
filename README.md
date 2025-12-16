@@ -14,16 +14,54 @@ Haptic Grid displays vary in sizes and forms, and have been used on fingertips, 
 
 Each channel of the multichannel haptic grid display is defined in [IEEE_HapticHardware.py](IEEE/IEEE_HapticHardware.py). 
 
-1. def setHapticOutput(act, g, act_index): -> act\
-Map haptic output to the physical grid
 
-__act__: An np.array of dimension equal to the number of haptic channels in the grid\
-__g__: gain for each channel\
-__act_index__: indexing of each channel
+### def setupHapticDictionary(device_type, border = SimpleNamespace(x, y, w, h)) -> device_dictionary
+Set the Haptic Device Dictionary for a given device and border
 
-2. def setupHapticDictionary(device_type, border = SimpleNamespace(x, y, w, h))
+    device_type: device types could be 'GrayPad' or '8ch_triangle'.
+    border: frame border of the grid.
+    device_dictionary = {
+        'device_type': device_type,     # e.g. 'CR Milano Vibe'
+        'grid_type': grid_type,         # e.g. '8ch_triangle'
+        'grid_size': grid_size,         # e.g. (2,4) # 2 rows and 4 columns
+        'device': device,               # e.g. 'GrayPad' or 'CR Milano Vibe'
+        'location': location,           # e.g. 'back, seat'
+        'channels': channels,
+        'act_index': act_index,
+        'g_index': g_index,
+        'act_layout': act_layout,
+        'tri_layout': tri_layout,
+        'rect_layout': rect_layout,
+        'physical_layout': physical_layout,
+        'physical_layout_dim': physical_layout_dim, # e.g. Inch
+        'frame border': border,         # e.g. default: pygame.Rect(0, 0, 200, 200)
+        'range': hrange,                # e.g. (0,999), default: (0,1)
+        'port': port,                   # e.g. 'Serial', default: 'UDP'
+        'actuator_type': actuator_type,  # e.g. 'VCM'
+        'actuator_size': actuator_size  # e.g. default: 30
+    }
+    act_layout: layout of the channels in the grid.
+    tri_layout: triangular layout of the channels in the grid.
 
-2. 
+### def barycentricEnergy(act, act_layout, tri_layout, player_dpos) -> result, act
+Calculates the Barycentric coordinates of a point within the grid based on the energy estimation
+    act: An np.array of dimension equal to the number of haptic channels in the grid.
+    act_layout: layout of the channels in the grid.
+    tri_layout: triangular layout of the channels in the grid.
+    player_dpos: position of the point defined inside the grid.
+    result: if the point is "Inside" or "Outside" the grid
+
+
+### def setHapticOutput(act, g, act_index) -> act
+Map haptic output to a physical grid
+
+    act: An np.array of dimension equal to the number of haptic channels in the grid.
+    g: gain for each channel.
+    act_index: index of each channel.
+
+
+### def map_linearhaptics(value, minH, maxH, minI=0.0, maxI=1.0) -> value
+Maps the value linearly from [minI,maxI] to [minH,maxH]
 
 🎥 **Demo Video**  
 [Click to watch the demo](images/HapticGenAI_demo.mp4)
