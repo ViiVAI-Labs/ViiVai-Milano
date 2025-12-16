@@ -159,6 +159,18 @@ def setupHapticDictionary(device_type, border = SimpleNamespace(x=0, y=0, w=201,
         physical_layout = np.array([(0,0),(8,0),(0,12),(8,12),(0,24),(8,24)])
         physical_layout_dim = 'inch'
 
+    elif device_type == '12ch_2x6rectangle':
+        grid_type = '12ch_2x6rectangle'
+        grid_size = (2,6) # 2 rows and 6 columns
+        device = 'HapticSofa'
+        location = 'back, seat'
+        if border == SimpleNamespace(x=0, y=0, w=201, h=201): border = SimpleNamespace(x=0, y=0, w=640, h=360)
+        channels = 12 ## if using MOTU device then use 14 (ch 11-12 are digital)
+        actuator_type = np.full(channels, 'VCM')
+        act_index, g_index, act_layout, tri_layout, rect_layout = setupHapticGrid(grid_type, border)
+        physical_layout = np.array([])
+        physical_layout_dim = ''
+    
     elif device_type == '4ch_2x2rectangle': 
         grid_type = '4ch_2x2rectangle'
         grid_size = (2,2) # 2 rows and 2 columns
@@ -174,7 +186,7 @@ def setupHapticDictionary(device_type, border = SimpleNamespace(x=0, y=0, w=201,
 
     else:
         print('no such haptic grid definition exist. Please recheck your grid description')
-        quit()
+        return
 
     device_dictionary = {
         'device_type': device_type,     # e.g. 'CR Milano Vibe'

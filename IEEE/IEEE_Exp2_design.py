@@ -671,7 +671,6 @@ class TabbedApplication:
         self.tab_index = event.widget.index(selected_tab_id)
         self.tab_text = event.widget.tab(selected_tab_id, "text")
         print(f"Tab changed to: {selected_tab_id} ({self.tab_index}) {self.tab_text}")
-
         
         if self.Haptics_is_ON: ## stop haptics
             self.toggle_hapticbutton_state()
@@ -686,7 +685,7 @@ class TabbedApplication:
         
 if __name__ == "__main__":  
     root = tk.Tk()
-    root.geometry("660x800")
+    root.geometry("800x800")
     app = TabbedApplication(root)
     root.mainloop()
 

@@ -482,7 +482,7 @@ class TabbedApplication:
         self.checkboxBaseVar.set(0)
 
         ## --- Combobox for device selection
-        device_list = ['CR Milano Vibe','GrayPad','8ch_triangle','8ch_2x4rectangle','12ch_2x6rectangle','6ch_3x2rectangle','4ch_2x2rectangle','2ch_1x2rectangle']
+        device_list = ['CR Milano Vibe','GrayPad','8ch_triangle','12ch_2x6rectangle','4ch_2x2rectangle']
         self.device_selector = ttk.Combobox(self.common_frame, width=25, state="readonly", values=device_list)
         self.device_selector.pack(side='left', pady=5, padx = 40)
         self.device_selector.bind("<<ComboboxSelected>>", self.select_device)
@@ -676,11 +676,6 @@ class TabbedApplication:
         self.tab_index = event.widget.index(selected_tab_id)
         self.tab_text = event.widget.tab(selected_tab_id, "text")
         print(f"Tab changed to: {selected_tab_id} ({self.tab_index}) {self.tab_text}")
-
-        if self.tab_text == 'OpenCV Tab': ## pause/unpause opencv video
-            self.video_player.paused = False
-        else:
-            self.video_player.paused = True
         
         if self.Haptics_is_ON: ## stop haptics
             self.toggle_hapticbutton_state()
