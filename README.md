@@ -108,7 +108,7 @@ Run [IEEE/IEEE_Demo1.py](IEEE/IEEE_Demo1.py) to play the demo.
 
 
 🎥 **Demo Video**  
-[![Watch the video](images/Demo1_frame.png)](images/IEEE_HapticDemo1.mp4)
+[![Watch the video](images/Demo1_frame.png)](https://www.youtube.com/watch?v=-558AjHPjec)
 <!-- [Click to watch the demo](images/IEEE_HapticDemo1.mp4) -->
 <!-- [![Click to watch the demo](images/GenAI_frame.png)](images/HapticGenAI_demo.mp4) -->
 
