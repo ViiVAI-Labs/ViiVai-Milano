@@ -15,7 +15,7 @@ from types import SimpleNamespace
 def setHapticOutput(act, g, act_index):
     '''maps index and gain for grid displays
     -index mapping is working for 12 channel grid. do not change the values or circuitry otherwise 
-    determine the physical mapping again.
+    determine physical channel mapping again.
     - gain mapping has bugs so keep gains to 1.'''
     mact = [x * y for x, y in zip_longest(act, g, fillvalue=1)] # set gain for act in grid
     # mact = list(map(lambda x, y: x * y, act, g))
@@ -23,6 +23,7 @@ def setHapticOutput(act, g, act_index):
         act[f]=mact[f]
     # print(act)
 
+    # rearange output array
     nact = np.zeros(len(act))
     for i in range(len(act_index)):
         nact[act_index[i]]=act[i]

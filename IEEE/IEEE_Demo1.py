@@ -139,6 +139,12 @@ class DrawingApp:
         g = self.green_slider.get()
         b = self.blue_slider.get()
         self.current_color = f"#{r:02x}{g:02x}{b:02x}"  # Convert RGB to hex color string
+        
+        ## color2haptics mapping
+        self.frequency = int(r*220/255 - b*70/255) + 80
+        if (g==0): self.modulation=0
+        else: self.modulation = g//10+5
+        print(f'F: {self.frequency}, M:{self.modulation}')
         self.update_sliders()
 
     def update_thickness(self, val):
@@ -462,37 +468,51 @@ class TabbedApplication:
 
         ## Common frame for buttons, serial list for all table
         self.common_frame = tk.Frame(self.master)
-        self.common_frame.pack(side="top", pady=20, padx=20)
+        self.common_frame.pack(side="top", pady=10, padx=10)
 
         ## frame to set buttons on one end in a column
         self.button_frame = tk.Frame(self.common_frame)
-        self.button_frame.pack(side="left", pady=5, padx=0)
+        self.button_frame.pack(side="left", pady=0, padx=0)
 
         ## --- Haptic Toggle button ---
         self.toggle_button = tk.Button(self.button_frame, text="Haptic is OFF", relief="raised", command=self.toggle_hapticbutton_state)
-        self.toggle_button.pack(side='top', pady=5)
+        self.toggle_button.pack(side='top', pady=0)
 
         ## --- Export button ---
         self.export_button = tk.Button(self.button_frame, text="Export", relief="raised", command=self.export_hapticfile)
-        self.export_button.pack(side='top', pady=5)
+        self.export_button.pack(side='top', pady=0)
 
         self.checkboxBaseVar=tk.BooleanVar()
         self.checkboxBase=tk.Checkbutton(self.button_frame, text="Baseline adjustment", variable=self.checkboxBaseVar)
         self.checkboxBase.pack()
         self.checkboxBaseVar.set(0)
 
+        ## frame for device and port selectors
+        self.side_frame = tk.Frame(self.common_frame)
+        self.side_frame.pack(side="left", pady=0, padx=0)
+
+        ## --- device label
+        tk.Label(self.side_frame, text="Select Device", font=("Helvetica", 16)).pack()
+
         ## --- Combobox for device selection
         device_list = ['CR Milano Vibe','GrayPad','8ch_triangle','12ch_2x6rectangle','4ch_2x2rectangle']
-        self.device_selector = ttk.Combobox(self.common_frame, width=25, state="readonly", values=device_list)
-        self.device_selector.pack(side='left', pady=5, padx = 40)
+        self.device_selector = ttk.Combobox(self.side_frame, width=25, state="readonly", values=device_list)
+        self.device_selector.pack(side='top', pady=0, padx = 40)
         self.device_selector.bind("<<ComboboxSelected>>", self.select_device)
-        self.device_selector.current(0)
-
-        ## --- refresh button
-        tk.Button(self.common_frame, text="Refresh", command=self.refresh_ports).pack(side='left', pady=5)
+        self.device_selector.current(1)
         ## --- Combobox for port selection
-        self.port_selector = ttk.Combobox(self.common_frame, state="readonly", width=25)
-        self.port_selector.pack(side='left', pady=5, padx = 40)
+        self.port_selector = ttk.Combobox(self.side_frame, state="readonly", width=25)
+        self.port_selector.pack(side='top', pady=0, padx = 40)
+        ## --- refresh button
+        tk.Button(self.side_frame, text="Refresh", command=self.refresh_ports).pack(side='top', pady=0)
+
+        ## frame for label
+        self.right_frame = tk.Frame(self.common_frame)
+        self.right_frame.pack(side="left", pady=0, padx=0)
+
+        self.port_labeltext = tk.StringVar()
+        self.port_labeltext.set('port type: None')
+        self.port_label=tk.Label(self.right_frame, textvariable=self.port_labeltext, font=("Helvetica", 16)).pack()
 
         ## ----- Notebook with Tabs
         ## -------------------------
@@ -564,6 +584,9 @@ class TabbedApplication:
         self.range = self.deviceDict['range']
         self.porttype = self.deviceDict['port']
         self.actuator_type = self.deviceDict['actuator_type']
+        self.grid_type = self.deviceDict['grid_type']
+
+        self.port_labeltext.set(f'port type: {self.porttype}\ngrid type: {self.grid_type}\nchannels: {self.hchannels}')
         
         # print(self.act)
         print("Border: ", self.deviceDict['frame border'], ' port type: ', self.porttype, 'range', self.range, 'actuator types: ',self.actuator_type)
@@ -586,11 +609,15 @@ class TabbedApplication:
         elapsed_time=time.time()-self.last_time
         self.last_time=time.time()
 
+        ##
+        self.frequency = self.haptic_canvas.frequency
+        self.modulation = self.haptic_canvas.modulation
+
         ## reset actuators (creates jitters in rendering)
         # self.act = np.zeros(self.hchannels)
 
         ## --- for Haptic Canvas application
-        if self.haptic_canvas.Haptics_is_ON and self.tab_index ==1: # if canvas is drawing
+        if self.haptic_canvas.Haptics_is_ON and self.tab_index ==0: # if canvas is drawing
             if self.hchannels != self.haptic_canvas.channels:
                 print('actuator mismatch bt haptic engine and tab demo')
             else:
@@ -725,7 +752,7 @@ class TabbedApplication:
         
 if __name__ == "__main__":  
     root = tk.Tk()
-    root.geometry("960x800")
+    root.geometry("860x800")
     app = TabbedApplication(root)
     root.mainloop()
 

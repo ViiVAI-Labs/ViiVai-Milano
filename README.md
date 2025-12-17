@@ -78,6 +78,9 @@ Calculates the Barycentric coordinates of a point within the grid based on the e
   <figcaption>Your image caption text goes here.</figcaption>
 </figure>
 
+### def sendUDPamplitude(client, a)
+Send UDP massage with act np.array over the client
+
 ### def setHapticOutput(act, g, act_index) -> act
 Map haptic output to a physical grid
 
@@ -85,9 +88,33 @@ Map haptic output to a physical grid
 **g:** gain for each channel.\
 **act_index:** index of each channel.
 
-
 ### def map_linearhaptics(value, minH, maxH, minI=0.0, maxI=1.0) -> value
 Maps the value linearly from [minI,maxI] to [minH,maxH]
+
+### class CR_RP2040W
+A class for serial haptic grids defined in [IEEE_CRHapticDriver.py](IEEE/IEEE_CRHapticDriver.py). Firmware implemented on RasphberryPi PicoW RP2040/RP2350
+
+**Connents the Device:** 
+    
+    self.HapticDevice = CR_RP2040W(port='/dev/tty.usbmodem101')
+
+**disconnect():** disconnects the serial device\
+**reset():** resets the serial device\
+**sendSerialStr(str):** send string via serial\
+**DirectHaptics(act):** send act np.array via serial
+
+
+## Color to Haptics Scheme
+
+
+<!-- <p align="center"> -->
+<img src="images/color2haptic.png" width="500" height="307">
+<!-- </p> -->
+
+https://la.disneyresearch.com/wp-content/uploads/Cross-modal-Correspondence-between-Vibrations-and-Colors-Paper.pdf
+
+
+
 
 🎥 **Demo Video**  
 [Click to watch the demo](images/HapticGenAI_demo.mp4)
