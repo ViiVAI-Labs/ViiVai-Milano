@@ -26,7 +26,7 @@ Haptic Grid displays vary in sizes and forms, and have been used on fingertips, 
 
 ## Nomenclature
 
-Each channel of the multichannel haptic grid display is defined in [IEEE_HapticHardware.py](IEEE/IEEE_HapticHardware.py). 
+Each channel of the multichannel haptic grid display is defined in [IEEE/IEEE_HapticHardware.py](IEEE/IEEE_HapticHardware.py). 
 
 <figure>
   <img src="images/grid-nomen.png" alt="Description of the image"/>
@@ -92,7 +92,7 @@ Map haptic output to a physical grid
 Maps the value linearly from [minI,maxI] to [minH,maxH]
 
 ### class CR_RP2040W
-A class for serial haptic grids defined in [IEEE_CRHapticDriver.py](IEEE/IEEE_CRHapticDriver.py). Firmware implemented on RasphberryPi PicoW RP2040/RP2350
+A class for serial haptic grids defined in [IEEE/IEEE_CRHapticDriver.py](IEEE/IEEE_CRHapticDriver.py). Firmware implemented on RasphberryPi PicoW RP2040/RP2350
 
 **Connents the Device:** 
     
@@ -103,21 +103,23 @@ A class for serial haptic grids defined in [IEEE_CRHapticDriver.py](IEEE/IEEE_CR
 **sendSerialStr(str):** send string via serial\
 **DirectHaptics(act):** send act np.array via serial
 
+## Example Code:
+Run [IEEE/IEEE_Demo1.py](IEEE/IEEE_Demo1.py) to play the demo.
 
-## Color to Haptics Scheme
 
+🎥 **Demo Video**  
+[![Watch the video](images/Demo1_frame.png)](images/IEEE_HapticDemo1.mp4)
+<!-- [Click to watch the demo](images/IEEE_HapticDemo1.mp4) -->
+<!-- [![Click to watch the demo](images/GenAI_frame.png)](images/HapticGenAI_demo.mp4) -->
+
+<!-- [![Watch the video](images/GenAI_frame.png)](https://www.youtube.com/watch?v=CgmsDfiV6Aw) -->
+
+## References:
+
+### Color to Haptics Scheme
 
 <!-- <p align="center"> -->
 <img src="images/color2haptic.png" width="500" height="307">
 <!-- </p> -->
 
 https://la.disneyresearch.com/wp-content/uploads/Cross-modal-Correspondence-between-Vibrations-and-Colors-Paper.pdf
-
-
-
-
-🎥 **Demo Video**  
-[Click to watch the demo](images/HapticGenAI_demo.mp4)
-<!-- [![Click to watch the demo](images/GenAI_frame.png)](images/HapticGenAI_demo.mp4) -->
-
-[![Watch the video](images/GenAI_frame.png)](https://www.youtube.com/watch?v=CgmsDfiV6Aw)

@@ -7,21 +7,15 @@
 from types import SimpleNamespace
 
 import tkinter as tk
-from tkinter import messagebox
 from tkinter import ttk
 from tkvideo import tkvideo 
 from tkinter.filedialog import askopenfilename, asksaveasfilename
-import cv2
-from PIL import Image, ImageTk
-import json, csv
+import json, os
 import time, threading
-import math, os, re
 import serial
 import serial.tools.list_ports
 import numpy as np
-import pandas as pd
 from pythonosc import udp_client
-import matplotlib.pyplot as plt
 
 from IEEE_CRHapticDriver import CR_RP2040W
 from IEEE_HapticHardware import setupHapticDictionary
