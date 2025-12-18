@@ -12,25 +12,6 @@ from time import sleep, time
 from types import SimpleNamespace
 
 ### --- Grid Display database ---
-def setHapticOutput(act, g, act_index):
-    '''maps index and gain for grid displays
-    -index mapping is working for 12 channel grid. do not change the values or circuitry otherwise 
-    determine physical channel mapping again.
-    - gain mapping has bugs so keep gains to 1.'''
-    mact = [x * y for x, y in zip_longest(act, g, fillvalue=1)] # set gain for act in grid
-    # mact = list(map(lambda x, y: x * y, act, g))
-    for f in range(len(mact)):
-        act[f]=mact[f]
-    # print(act)
-
-    # rearange output array
-    nact = np.zeros(len(act))
-    for i in range(len(act_index)):
-        nact[act_index[i]]=act[i]
-    act = nact
-
-    return(act)
-
 def setupHapticGrid(grid_type, border):
     if grid_type == '8ch_triangle':
         act_index = np.array([0, 1, 2, 3, 4, 5, 6, 7]) # actuator grid mapping (touch act[0] and enter MOTU channel)
@@ -213,6 +194,24 @@ def setupHapticDictionary(device_type, border = SimpleNamespace(x=0, y=0, w=201,
     # tri_layout = device_dictionary['tri_layout']
     return device_dictionary
 
+def setHapticOutput(act, g, act_index):
+    '''maps index and gain for grid displays
+    -index mapping is working for 12 channel grid. do not change the values or circuitry otherwise 
+    determine physical channel mapping again.
+    - gain mapping has bugs so keep gains to 1.'''
+    mact = [x * y for x, y in zip_longest(act, g, fillvalue=1)] # set gain for act in grid
+    # mact = list(map(lambda x, y: x * y, act, g))
+    for f in range(len(mact)):
+        act[f]=mact[f]
+    # print(act)
+
+    # rearange output array
+    nact = np.zeros(len(act))
+    for i in range(len(act_index)):
+        nact[act_index[i]]=act[i]
+    act = nact
+
+    return(act)
 # if __name__ == "__main__":
 #     border = SimpleNamespace(x=350, y=250, w=100, h=200)
 #     dd=setupHapticDictionary('GrayPad')

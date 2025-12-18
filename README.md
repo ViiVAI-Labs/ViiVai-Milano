@@ -19,14 +19,14 @@ Haptic Grid Displays are common in research and development settings, enabling t
 
 <figure>
   <img src="images/hapticgrids.png" alt="Description of the image"/>
-  <figcaption>Your image caption text goes here.</figcaption>
+  <figcaption>.</figcaption>
 </figure>
 
 Haptic Grid displays vary in sizes and forms, and have been used on fingertips, tongue, forearm, wrist, waist, torso, back, and almost all skin surfaces. The goal of these displays is to increase communication throughput by providing mentally correlated tactile messages for language communication, for navigation, to render spatially distributed interpersonal affective touch, or to render spatial surrounding content for games, movies, and immersive media.
 
 ## Nomenclature
 
-Each channel of the multichannel haptic grid display is defined in [IEEE/IEEE_HapticHardware.py](IEEE/IEEE_HapticHardware.py). 
+Characteristics and layout of the multichannel haptic grid display is defined in [IEEE/IEEE_HapticHardware.py](IEEE/IEEE_HapticHardware.py). 
 
 <figure>
   <img src="images/grid-nomen.png" alt="Description of the image"/>
