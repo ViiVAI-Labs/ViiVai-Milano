@@ -75,7 +75,7 @@ Calculates the Barycentric coordinates of a point within the grid based on the e
 
 <figure>
   <img src="images/grid-bary.png" alt="Description of the image"/>
-  <figcaption>Your image caption text goes here.</figcaption>
+  <figcaption> </figcaption>
 </figure>
 
 ### def sendUDPamplitude(client, a)
