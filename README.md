@@ -11,7 +11,7 @@ API and examples for Haptic Grid Displays
 </p> -->
 
 ## What are Haptic Grid Displays
-Haptic Grid Displays are common in research and development settings, enabling the control of haptic content on the skin using multichannel haptic actuators arranged in spatial arrays. One advantage of grid displays is their ability to increase information transfer compared to a single actuator. Higher information throughput supports users to perform virtual tasks with greater efficiency. Another benefit of grid displays is the ability to provide structured spatial haptic feedback, correlating physical and media events to coherent haptic events, thus improving both immersion and causality with the virtual and/or augmented content in space.
+Haptic Grid Displays are common in research and development settings, enabling the control of haptic content on the skin using multichannel haptic actuators arranged in spatial arrays. One advantage of grid displays is their ability to increase information transfer compared to a single actuator. Higher information throughput supports users to perform virtual tasks with greater efficiency. Another benefit of grid displays is the ability to provide structured spatial haptic feedback, correlating physical and media events to coherent haptic events, thus improving both immersion and causality with the digital (virtual and/or augmented) content in space.
 
 <!-- <p align="center">
 <img src="images/hapticgrids.png" width="500" height="305">
@@ -19,7 +19,7 @@ Haptic Grid Displays are common in research and development settings, enabling t
 
 <figure>
   <img src="images/hapticgrids.png" alt="Description of the image"/>
-  <figcaption>.</figcaption>
+  <figcaption>Variety of Haptic Grid Displays seats, wearables and attachments</figcaption>
 </figure>
 
 Haptic Grid displays vary in sizes and forms, and have been used on fingertips, tongue, forearm, wrist, waist, torso, back, and almost all skin surfaces. The goal of these displays is to increase communication throughput by providing mentally correlated tactile messages for language communication, for navigation, to render spatially distributed interpersonal affective touch, or to render spatial surrounding content for games, movies, and immersive media.
@@ -78,8 +78,6 @@ Calculates the Barycentric coordinates of a point within the grid based on the e
   <figcaption> </figcaption>
 </figure>
 
-### def sendUDPamplitude(client, a)
-Send UDP massage with act np.array over the client
 
 ### def setHapticOutput(act, g, act_index) -> act
 Map haptic output to a physical grid
@@ -90,6 +88,9 @@ Map haptic output to a physical grid
 
 ### def map_linearhaptics(value, minH, maxH, minI=0.0, maxI=1.0) -> value
 Maps the value linearly from [minI,maxI] to [minH,maxH]
+
+### def sendUDPamplitude(client, a)
+Send UDP massage with act np.array over the client
 
 ### class CR_RP2040W
 A class for serial haptic grids defined in [IEEE/IEEE_CRHapticDriver.py](IEEE/IEEE_CRHapticDriver.py). Firmware implemented on RasphberryPi PicoW RP2040/RP2350
@@ -113,6 +114,8 @@ Run [IEEE/IEEE_Demo1.py](IEEE/IEEE_Demo1.py) to play the demo.
 <!-- [![Click to watch the demo](images/GenAI_frame.png)](images/HapticGenAI_demo.mp4) -->
 
 <!-- [![Watch the video](images/GenAI_frame.png)](https://www.youtube.com/watch?v=CgmsDfiV6Aw) -->
+
+Run [IEEE/IEEE_Exp2_design.py.py](IEEE/IEEE_Exp2_design.py.py) to play the demo # 2.
 
 ## References:
 

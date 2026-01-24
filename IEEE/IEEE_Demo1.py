@@ -32,7 +32,7 @@ class DrawingApp:
         self.framesize = SimpleNamespace(x=0, y=0, w=800, h=360)
         self.channels = 2
         self.act = np.zeros(self.channels)
-        self.frequency = 200 ## frequency of VCM signal
+        self.frequency = 400 ## frequency of VCM signal
         self.modulation = 20 ## modulation of VCM signal
         self.circle_positions = [] ## to store actuator center for animation in layout
         
@@ -458,7 +458,7 @@ class TabbedApplication:
         self.act = np.zeros(self.hchannels)
         self.range = (0, 1)
         self.porttype = ''
-        self.frequency, self.modulation = 200, 20
+        self.frequency, self.modulation = 400, 20
 
         ## Common frame for buttons, serial list for all table
         self.common_frame = tk.Frame(self.master)
