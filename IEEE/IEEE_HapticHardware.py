@@ -15,7 +15,7 @@ from types import SimpleNamespace
 def setupHapticGrid(grid_type, border):
     if grid_type == '8ch_triangle':
         act_index = np.array([0, 1, 2, 3, 4, 5, 6, 7]) # actuator grid mapping (touch act[0] and enter MOTU channel)
-        g_index = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) # gain set on default actuator grid. must be len(act)
+        g_index = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]) # gain set on default actuator grid. must be > len(act)
         act_layout = np.array([(0,0),(border.w/2,0),(border.w,0),
                         (border.w/4,border.h/2),(border.w*3/4,border.h/2),(0,border.h),
                         (border.w/2,border.h),(border.w,border.h)])

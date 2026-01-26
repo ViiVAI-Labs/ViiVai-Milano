@@ -1,6 +1,6 @@
 # ViiVai Milano: Grid Displays for media and communication
 Python API and examples for Haptic Grid Displays
-(tested on python 3.13.3 on Mac OS)
+(tested for python 3.13.3 on Mac OS)
 
 <figure>
   <img src="images/haptic-media.png" alt="Description of the image"/>
@@ -12,7 +12,7 @@ Python API and examples for Haptic Grid Displays
 </p> -->
 
 ## What are Haptic Grid Displays
-Haptic Grid Displays are common in research and development settings, enabling the control of haptic content on the skin using multichannel haptic actuators arranged in spatial arrays. One advantage of grid displays is their ability to increase information transfer compared to a single actuator. Higher information throughput supports users to perform virtual tasks with greater efficiency. Another benefit of grid displays is the ability to provide structured spatial haptic feedback, correlating physical and media events to coherent haptic events, thus improving both immersion and causality with the digital (virtual and/or augmented) content in space.
+Haptic Grid Displays are common in research and development settings, enabling the control of haptic content on the skin using multichannel haptic actuators arranged in spatial arrays. One advantage of grid displays is their ability to increase information transfer compared to a single actuator. Higher information throughput supports users to perform virtual tasks with greater efficiency. Another benefit of grid displays is the ability to provide structured spatial haptic feedback, correlating physical and media events to coherent haptic events, thus improving both immersion and causality with the digital (virtual and/or augmented) content in space and time.
 
 <!-- <p align="center">
 <img src="images/hapticgrids.png" width="500" height="305">
@@ -20,8 +20,9 @@ Haptic Grid Displays are common in research and development settings, enabling t
 
 <figure>
   <img src="images/hapticgrids.png" alt="Description of the image"/>
-  <figcaption>Variety of Haptic Grid Displays seats, wearables and attachments</figcaption>
+  <figcaption>Variety of Haptic Grid Displays. Seats , wearables and attachments.</figcaption>
 </figure>
+
 
 Haptic Grid displays vary in sizes and forms, and have been used on fingertips, tongue, forearm, wrist, waist, torso, back, and almost all skin surfaces. The goal of these displays is to increase communication throughput by providing mentally correlated tactile messages for language communication, for navigation, to render spatially distributed interpersonal affective touch, or to render spatial surrounding content for games, movies, and immersive media.
 
