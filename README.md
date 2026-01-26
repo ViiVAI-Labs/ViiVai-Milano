@@ -1,5 +1,6 @@
 # ViiVai Milano: Grid Displays for media and communication
-API and examples for Haptic Grid Displays
+Python API and examples for Haptic Grid Displays
+(tested on python 3.13.3 on Mac OS)
 
 <figure>
   <img src="images/haptic-media.png" alt="Description of the image"/>

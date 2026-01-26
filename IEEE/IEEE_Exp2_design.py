@@ -355,7 +355,7 @@ class ExpDrawingApp:
         """
         self.current_x, self.current_y = start_x, start_y
         # self.current_x, self.current_y, _, _ = canvas.coords(circle_id) # Get current coordinates of the circles
-        print(self.current_x, self.current_y)
+        # print(self.current_x, self.current_y)
         # turn haptics on 
         self.act = np.zeros(self.channels)
         self.Haptics_is_ON = True
@@ -382,7 +382,7 @@ class ExpDrawingApp:
             canvas.move(circle_id, dx, dy)
             return
 
-        # Calculate step size
+        ## Calculate step size
         step_dx = dx / num_steps
         step_dy = dy / num_steps
 
@@ -407,7 +407,7 @@ class ExpDrawingApp:
                 self.update_act_size(self.act, reset=0)
                 # canvas.move(circle_id, final_dx, final_dy)
                 # canvas.move(circle_id, step_dx, step_dy)
-
+        ## start animation
         animate_step(0)
 
     ## clear canvas and draw the layout
