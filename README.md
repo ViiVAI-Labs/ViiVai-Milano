@@ -107,7 +107,7 @@ A class for serial haptic grids defined in [IEEE/IEEE_CRHapticDriver.py](IEEE/IE
 **DirectHaptics(act):** send act np.array via serial
 
 ## Example Code:
-Run [IEEE/IEEE_Demo1.py](IEEE/IEEE_Demo1.py) to play the demo.
+Run [IEEE/IEEE_Demo1.py](IEEE/IEEE_Demo1.py) to play the ``Canvas Drawing`` demo (see YouTube video below).
 
 
 🎥 **Demo Video**  
@@ -117,7 +117,12 @@ Run [IEEE/IEEE_Demo1.py](IEEE/IEEE_Demo1.py) to play the demo.
 
 <!-- [![Watch the video](images/GenAI_frame.png)](https://www.youtube.com/watch?v=CgmsDfiV6Aw) -->
 
-Run [IEEE/IEEE_Exp2_design.py.py](IEEE/IEEE_Exp2_design.py.py) to play the demo # 2.
+Run [IEEE/IEEE_Exp2_design.py.py](IEEE/IEEE_Exp2_design.py.py) to play the demo # 2 (see YouTube video below).
+
+
+🎥 **Demo Video**  
+[![Watch the video](images/Demo2_frame.png)](https://youtu.be/93-q3uX8XO4)
+
 
 ## References:
 

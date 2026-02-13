@@ -75,7 +75,7 @@ def setupHapticGrid(grid_type, border):
         g_index = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
         act_layout = np.array([(0,0),(border.w,0),(0,border.h),(border.w,border.h)])
         tri_layout = np.array([(act_layout[0],act_layout[2],act_layout[3]),(act_layout[0],act_layout[1],act_layout[3])])
-        # tri_layout = np.array([(act_layout[0],act_layout[1],act_layout[3]),(act_layout[0],act_layout[2],act_layout[3])])
+        # tri_layout = np.array([(act_layout[0],act_layout[1],act_layout[2]),(act_layout[1],act_layout[2],act_layout[3])])
         rect_layout = np.array([(act_layout[0],act_layout[1],act_layout[3],act_layout[2])])
 
     elif grid_type == '2ch_1x2rectangle': 
