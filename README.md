@@ -117,11 +117,16 @@ Run [IEEE/IEEE_Demo1.py](IEEE/IEEE_Demo1.py) to play the ``Canvas Drawing`` demo
 
 <!-- [![Watch the video](images/GenAI_frame.png)](https://www.youtube.com/watch?v=CgmsDfiV6Aw) -->
 
-Run [IEEE/IEEE_Exp2_design.py.py](IEEE/IEEE_Exp2_design.py.py) to play the demo # 2 (see YouTube video below).
+Run [IEEE/IEEE_Exp2_design.py.py](IEEE/IEEE_Exp2_design.py) to play the demo # 2 (see YouTube video below).
 
 
 🎥 **Demo Video**  
 [![Watch the video](images/Demo2_frame.png)](https://youtu.be/93-q3uX8XO4)
+
+
+🎥 **Other Demo Video**  
+
+[![Watch the video on LLMs to autogenerate haptic media](images/LLM_Demo.png)](https://youtu.be/CgmsDfiV6Aw)
 
 
 ## References:
