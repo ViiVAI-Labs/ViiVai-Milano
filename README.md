@@ -20,9 +20,8 @@ Haptic Grid Displays are common in research and development settings, enabling t
 
 <figure>
   <img src="images/hapticgrids.png" alt="Description of the image"/>
-  <figcaption>Variety of Haptic Grid Displays. Seats , wearables and attachments. </figcaption>
+  <figcaption> </figcaption>
 </figure>
-
 
    Haptic Grid displays vary in sizes and forms, and have been used on fingertips, tongue, forearm, wrist, waist, torso, back, and almost all skin surfaces. The goal of these displays is to increase communication throughput by providing mentally correlated tactile messages for language communication, for navigation, to render spatially distributed interpersonal affective touch, or to render spatial surrounding content for games, movies, and immersive media.
 
