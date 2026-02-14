@@ -20,7 +20,7 @@ Haptic Grid Displays are common in research and development settings, enabling t
 
 <figure>
   <img src="images/hapticgrids.png" alt="Description of the image"/>
-  <figcaption>Variety of Haptic Grid Displays. Seats , wearables and attachments.   /figcaption>
+  <figcaption>Variety of Haptic Grid Displays. Seats , wearables and attachments.   </figcaption>
 </figure>
 
 
