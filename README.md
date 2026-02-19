@@ -12,7 +12,7 @@ Python API and examples for Haptic Grid Displays
 </p> -->
 
 ## What are Haptic Grid Displays
-Haptic Grid Displays are common in research and development settings, enabling the control of haptic content on the skin using multichannel haptic actuators arranged in spatial arrays. One advantage of grid displays is their ability to increase information transfer compared to a single actuator. Higher information throughput supports users to perform virtual tasks with greater efficiency. Another benefit of grid displays is the ability to provide structured spatial haptic feedback, correlating physical and media events to coherent haptic events, thus improving both immersion and causality with the digital (virtual and/or augmented) content in space and time.
+Haptic Grid Displays are common in research and development settings, enabling the control of haptic content on the skin using multichannel haptic actuators arranged in spatial arrays. One advantage of grid displays is their ability to increase information transfer compared to a single actuator. Higher information throughput supports users to perform virtual tasks with greater efficiency. Another benefit of grid displays is the ability to provide structured spatial haptic feedback, correlating physical and media events to coherent haptic events, thus improving both immersion and causality with the digital (virtual and/or augmented) content in the space and time.
 
 <!-- <p align="center">
 <img src="images/hapticgrids.png" width="500" height="305">
@@ -81,7 +81,7 @@ Calculates the Barycentric coordinates of a point within the grid based on the e
 
 
 ### def setHapticOutput(act, g, act_index) -> act
-Map haptic output to a physical grid
+Map haptic outputs to a physical grid indexes
 
 **act:** An np.array of dimension equal to the number of haptic channels in the grid.\
 **g:** gain for each channel.\
