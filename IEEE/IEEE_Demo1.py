@@ -1,3 +1,5 @@
+## Copyrighted by ViiVAI Labs and Studio 2025
+
 ## IEEE_Demo1: 
 ###################################################
 ### Last update: 13 October 2025             ########

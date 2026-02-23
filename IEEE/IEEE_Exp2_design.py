@@ -1,5 +1,6 @@
-## __Milano_Exp2_design: on Comfort Research unit
+## Copyrighted by ViiVAI Labs and Studio 2025
 
+## __Milano_Exp2_design: 
 
 # ''' HAPTIC CANVAS FOR SERIAL API
 
