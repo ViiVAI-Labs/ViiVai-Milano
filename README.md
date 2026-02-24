@@ -123,9 +123,12 @@ Run [IEEE/IEEE_Exp2_design.py.py](IEEE/IEEE_Exp2_design.py) to play the demo # 2
 [![Watch the video](images/Demo2_frame.png)](https://youtu.be/93-q3uX8XO4)
 
 
-🎥 **Other Demo Video**  
+🎥 **Other Demo Videos **  
 
 [![Watch the video on LLMs to autogenerate haptic media](images/LLM_Demo.png)](https://youtu.be/CgmsDfiV6Aw)
+
+
+[![Watch the video on autogeneration of haptic media from movies](images/LLM_Demo.png)](https://youtu.be/AjAwrikS0vI)
 
 
 ## References:
