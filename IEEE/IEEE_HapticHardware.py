@@ -1,4 +1,4 @@
-## Copyrighted by ViiVAI Labs and Studio 2025
+## Copyright by ViiVAI Labs and Studio 2025
 
 ## definition of haptic hardware
 ''' haptic python file 

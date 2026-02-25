@@ -1,4 +1,4 @@
-## Copyrighted by ViiVAI Labs and Studio 2025
+## Copyright by ViiVAI Labs and Studio 2025
 
 import serial
 from time import sleep, time
