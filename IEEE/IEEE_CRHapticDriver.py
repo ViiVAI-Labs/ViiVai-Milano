@@ -11,7 +11,7 @@ class CR_RP2040W:
         self.port = port
         try:
             self.HapticDevice = serial.Serial(port=port,baudrate=baudrate,timeout=self.timeout)
-            print(f"Initialize Comfort Research Haptic Device. Connected to {port}")
+            print(f"Initialize Haptic Device. Connected to {port}")
             self.reset()
             
         except serial.SerialException as e:

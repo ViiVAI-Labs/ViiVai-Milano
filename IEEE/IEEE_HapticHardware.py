@@ -42,10 +42,7 @@ def setupHapticGrid(grid_type, border):
     
     elif grid_type == '12ch_2x6rectangle':
         # act_index = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13])
-        # act_index = np.array([6, 0, 8, 2, 3, 9, 10, 4, 5, 11, 12, 13, 7, 1])
-        # act_index = np.array([1, 13, 3, 4, 7, 8, 0, 12, 2, 5, 6, 9, 10, 11])
         act_index = np.array([4, 2, 6, 8, 1, 13, 5, 3, 7, 9, 0, 12, 10, 11])
-        # act_index = np.array([13, 1, 2, 4, 6, 8, 12, 0, 3, 5, 7, 9, 10, 11])
         g_index = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
         act_layout = np.array([(0,0),(border.w/5,0),(2*border.w/5,0),(3*border.w/5,0),(4*border.w/5,0),(border.w,0),
                         (0,border.h),(border.w/5,border.h),(2*border.w/5,border.h),(3*border.w/5,border.h),(4*border.w/5,border.h),(border.w,border.h)])
@@ -61,7 +58,7 @@ def setupHapticGrid(grid_type, border):
                                 (act_layout[4],act_layout[5],act_layout[11],act_layout[10])])
 
         
-    elif grid_type == '6ch_3x2rectangle':  # for Comfort Research v1.0 [July 21, 2025] 
+    elif grid_type == '6ch_3x2rectangle':  # for CR v1.0 [July 21, 2025] 
         act_index = np.array([0, 1, 2, 3, 4, 5])
         g_index = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
         act_layout = np.array([(0,0),(border.w,0),
@@ -129,7 +126,7 @@ def setupHapticDictionary(device_type, border = SimpleNamespace(x=0, y=0, w=201,
         physical_layout = np.array([(0,0), (3,0), (6,0), (1.5,2.5), (4.5,2.5), (0,5), (3,5), (6,5)])
         physical_layout_dim = 'inch'
 
-    elif device_type == 'CR Milano Vibe':  # for Comfort Research v1.0 [July 21, 2025] 
+    elif device_type == 'CR Milano Vibe':  # for CR v1.0 [July 21, 2025] 
         grid_type = '6ch_3x2rectangle'
         grid_size = (3,2) # 3 rows and 2 columns
         device = 'CR Milano Vibe'
@@ -307,7 +304,6 @@ def barycentricEnergy(act, act_layout, tri_layout, player_dpos):#x, y):
         result, a, b, c = isInsideTriangle(i[0],i[1],i[2], player_dpos)#[x, y])
         if result == "Inside":
             break
-    # print(i[0],i[1],i[2], a, b, c, result)
 
     ## set barycenters to act levels
     if result == "Inside":
@@ -468,6 +464,33 @@ def isInsideRectangle(A, B, C, D, P):
     else:
         return "Outside", a, b, d, c ## replaced it with v from ai gen code
 
+
+# # A = (0, 0)
+# # B = (100,0)
+# # C = (100,100)
+# # D = (0, 100)
+# # test_point_inside = (0, 20)
+# # test_point_outside = (0, 169)
+
+# # A = (67, 0)
+# # C = (134, 201)
+# # B, D = (0,0), (0,0) ## not used
+# # print(f"Bilinear weights for {test_point_inside}: {isInsideRectangle(A, B, C, D, test_point_inside)}")
+# # print(f"Bilinear weights for {test_point_outside}: {isInsideRectangle(A, B, C, D, test_point_outside)}")
+
+
+
+### --- linearhaptic rendering ---
+def map_linearhaptics(value, minH, maxH, minI=0.0, maxI=1.0):
+    ''' this function maps linear HDT function
+    added July 30th '''
+    return minH + ((value-minI)*(maxH - minH)/(maxI - minI))
+
+# print(map_linearhaptics(20, 0, 1, 0, 999))
+
+
+# Example usage:
+
 # ## test bilinear interpolation in a rectangle
 # dd=setupHapticDictionary('GrayPad')
 # rect_layout=dd['rect_layout']
@@ -480,30 +503,8 @@ def isInsideRectangle(A, B, C, D, P):
 # test_point_outside = (20, 0)
 # act=np.zeros(channels)
 
-# # A = (0, 0)
-# # B = (100,0)
-# # C = (100,100)
-# # D = (0, 100)
-# # test_point_inside = (0, 20)
-# # test_point_outside = (0, 69)
+# print(f"Bilinear amps for {test_point_inside}: {bilinearLinear(act, act_layout, rect_layout, test_point_inside)} -- sum: {np.sum(act)}")
+# print(f"Bilinear amps for {test_point_outside}: {bilinearLinear(act, act_layout, rect_layout, test_point_outside)} -- sum: {np.sum(act)}")
 
-# # A = (67, 0)
-# # C = (134, 201)
-# # B, D = (0,0), (0,0) ## not used
-# # print(f"Bilinear weights for {test_point_inside}: {isInsideRectangle(A, B, C, D, test_point_inside)}")
-# # print(f"Bilinear weights for {test_point_outside}: {isInsideRectangle(A, B, C, D, test_point_outside)}")
-# print(f"Bilinear amps are {test_point_inside}: {bilinearLinear(act, act_layout, rect_layout, test_point_inside)} -- sum: {np.sum(act)}")
-# print(f"Bilinear amps are {test_point_outside}: {bilinearLinear(act, act_layout, rect_layout, test_point_outside)} -- sum: {np.sum(act)}")
-
-# print(f"Barycentric amps are {test_point_inside}: {barycentricEnergy(act, act_layout, tri_layout, test_point_inside)} -- sum: {np.sum(act)}")
-# print(f"Barycentric amps are {test_point_outside}: {barycentricEnergy(act, act_layout, tri_layout, test_point_outside)} -- sum: {np.sum(act)}")
-# Example usage:
-
-
-### --- linearhaptic rendering ---
-def map_linearhaptics(value, minH, maxH, minI=0.0, maxI=1.0):
-    ''' this function maps linear HDT function
-    added July 30th '''
-    return minH + ((value-minI)*(maxH - minH)/(maxI - minI))
-
-# print(map_linearhaptics(20, 0, 1, 0, 999))
+# print(f"Barycentric amps for {test_point_inside}: {barycentricEnergy(act, act_layout, tri_layout, test_point_inside)} -- sum: {np.sum(act)}")
+# print(f"Barycentric amps for {test_point_outside}: {barycentricEnergy(act, act_layout, tri_layout, test_point_outside)} -- sum: {np.sum(act)}")
